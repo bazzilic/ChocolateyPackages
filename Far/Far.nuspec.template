@@ -6,6 +6,7 @@
     <version>3.0.<<<Build>>></version>
     <authors>Eugene Roshal,Far Group</authors>
     <owners>Justin Dearing,Vasily Sidorov</owners>
+    <packageSourceUrl>https://github.com/bazzilic/ChocolateyPackages/tree/master/Far</packageSourceUrl>
     <summary>File and ARchive Manager</summary>
     <description>Far Manager is a program for managing files and archives in Windows operating systems. Far Manager works in text mode and provides a simple and intuitive interface for performing most of the necessary actions.</description>
     <projectUrl>http://farmanager.com/index.php?l=en</projectUrl>

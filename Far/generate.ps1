@@ -26,7 +26,7 @@ if ($webpage -match 'href="files/(Far30b\d+\.x86\.\d{8}\.msi)"')
 
     Write-Host "Found a link to a stable x86 build" $buildx86
 
-    if ( [convert]::ToInt32($buildx86) -ge [convert]::ToInt32($lastbuild) )
+    if ( [convert]::ToInt32($buildx86) -gt [convert]::ToInt32($lastbuild) )
     {
         $tempfilename = [System.IO.Path]::GetTempFileName()
         Invoke-WebRequest -URI $downloadUri$x86filename -OutFile $tempfilename
@@ -57,7 +57,7 @@ if ($webpage -match 'href="files/(Far30b\d+\.x64\.\d{8}\.msi)"')
         Exit
     }
 
-    if ( [convert]::ToInt32($buildx64) -ge [convert]::ToInt32($lastbuild) )
+    if ( [convert]::ToInt32($buildx64) -gt [convert]::ToInt32($lastbuild) )
     {
         $tempfilename = [System.IO.Path]::GetTempFileName()
         Invoke-WebRequest -URI $downloadUri$x64filename -OutFile $tempfilename
@@ -84,9 +84,9 @@ cat 'chocolateyUninstall.ps1.template' | % { $_ -replace   "<<<ProductIDx86>>>" 
 cat 'chocolateyInstall.ps1.template'   | % { $_ -replace "<<<X86DownloadLink>>>", "$downloadUri$x86filename" } | % { $_ -replace "<<<X64DownloadLink>>>", "$downloadUri$x64filename" } | Out-File 'tools\chocolateyInstall.ps1'   -Encoding utf8
 cat 'Far.nuspec.template' | % { $_ -replace "<<<Build>>>", $buildx86 } | Out-File 'Far.nuspec' -Encoding utf8
 
-& "chocolatey" @("pack", "far.nuspec")
+& "chocolatey" @("pack", "Far.nuspec")
 
-mv "Far.3.0.$buildx64.nupkg" "..\output\"
+mv "Far.3.0.$buildx64.nupkg" "..\output\" -Force
 
 Write-Host "Package could be found in '..\output\' folder"
 Write-Host
