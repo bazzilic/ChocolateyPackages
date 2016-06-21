@@ -16,7 +16,7 @@
     <tags>admin console archiver file manager ftp scp sftp</tags>
     <licenseUrl>http://farmanager.com/license.php?l=en</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://raw.githubusercontent.com/bazzilic/ChocolateyPackages/master/Far/icon/Far.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/bazzilic/ChocolateyPackages/ee927cea3134c75c9a58acde54a28a644a9e2040/Far/icon/Far.png</iconUrl>
   </metadata>
   <files>
     <file src="tools\*" target="tools" />
