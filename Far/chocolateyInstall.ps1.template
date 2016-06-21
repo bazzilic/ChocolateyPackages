@@ -1,0 +1,4 @@
+Install-ChocolateyPackage `
+    "Far" 'msi' '/quiet ADDLOCAL=ALL' `
+    "<<<X86DownloadLink>>>" `
+    "<<<X64DownloadLink>>>"

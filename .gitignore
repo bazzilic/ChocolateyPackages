@@ -1,0 +1,5 @@
+﻿output/*
+*.nupkg
+*.nuspec
+chocolateyInstall.ps1
+chocolateyUninstall.ps1
