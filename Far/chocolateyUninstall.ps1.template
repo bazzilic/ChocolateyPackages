@@ -1,6 +1,6 @@
 $msiId = $null
 if ([Environment]::Is64BitOperatingSystem) {
-	$msiId = '<<<ProductIDx64>>>'
+	$msiId = '<<<ProductCodex64>>>'
 	Try {
 	   Write-Host "x64 environment detected, trying to uninstall the x64 version"
 	   Uninstall-ChocolateyPackage 'Far' 'MSI' "$msiId /qb" -validExitCodes @(0) # We try to uninstall x86 version
@@ -12,5 +12,5 @@ if ([Environment]::Is64BitOperatingSystem) {
 	}
 }
 
-$msiId = '<<<ProductIDx86>>>'
+$msiId = '<<<ProductCodex86>>>'
 Uninstall-ChocolateyPackage 'Far' 'MSI' "$msiId /qb" -validExitCodes @(0)

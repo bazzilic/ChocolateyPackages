@@ -1,4 +1,4 @@
-﻿output/*
+_output/*
 *.nupkg
 *.nuspec
 chocolateyInstall.ps1
