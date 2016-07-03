@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>Far-3</id>
+    <title>[Deprecated] FarManager 3.0 (Stable)</title>
+    <version>3.0.4700</version>
+    <authors>Eugene Roshal,Far Group</authors>
+    <owners>Justin Dearing,Vasily Sidorov</owners>
+    <packageSourceUrl>https://github.com/bazzilic/ChocolateyPackages/tree/master/Far-3</packageSourceUrl>
+    <summary>File and ARchive Manager</summary>
+    <description>Far Manager is a program for managing files and archives in Windows operating systems. Far Manager works in text mode and provides a simple and intuitive interface for performing most of the necessary actions.</description>
+    <projectUrl>http://farmanager.com/index.php?l=en</projectUrl>
+    <bugTrackerUrl>http://bugs.farmanager.com/my_view_page.php</bugTrackerUrl>
+    <projectSourceUrl>https://sourceforge.net/p/farmanager/code/HEAD/tree/</projectSourceUrl>
+    <mailingListUrl>http://forum.farmanager.com/viewforum.php?f=26</mailingListUrl>
+    <tags>admin console archiver file manager ftp scp sftp</tags>
+    <licenseUrl>http://farmanager.com/license.php?l=en</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <dependencies>
+      <dependency id="Far" version="3.0.4700" />
+    </dependencies>
+  </metadata>
+  <files>
+  </files>
+</package>

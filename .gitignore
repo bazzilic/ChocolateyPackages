@@ -1,5 +1,5 @@
 _output/*
 *.nupkg
-*.nuspec
+Far/*.nuspec
 chocolateyInstall.ps1
 chocolateyUninstall.ps1
