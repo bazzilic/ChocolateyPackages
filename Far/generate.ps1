@@ -20,6 +20,9 @@ $buildx64 = ''
 $x86filename = ''
 $x64filename = ''
 
+$x86Checksum = ''
+$x64Checksum = ''
+
 Write-Host
 Write-Host "`t[ Far Manager choco package update script ]"
 Write-Host
@@ -41,6 +44,7 @@ if ( $webpage -match 'href="files/(Far30b\d+\.x86\.\d{8}\.msi)"' )
         $tempfilename = [System.IO.Path]::GetTempFileName()
         Invoke-WebRequest -URI $downloadUri$x86filename -OutFile $tempfilename
         $productCodex86 = & "$absPath\msi-get.exe" $tempfilename
+        $x86Checksum = & checksum -t=sha256 $tempfilename
     }
     else
     {
@@ -72,6 +76,7 @@ if ( $webpage -match 'href="files/(Far30b\d+\.x64\.\d{8}\.msi)"' )
         $tempfilename = [System.IO.Path]::GetTempFileName()
         Invoke-WebRequest -URI $downloadUri$x64filename -OutFile $tempfilename
         $productCodex64 = & "$absPath\msi-get.exe" $tempfilename
+        $x64Checksum = & checksum -t=sha256 $tempfilename
     }
     else
     {
@@ -90,6 +95,11 @@ Write-Host "ProductCode for x64 MSI:" $productCodex64
 
 Write-Host
 
+Write-Host "SHA256 checksum for x86 MSI:" $x86Checksum
+Write-Host "SHA256 checksum for x64 MSI:" $x64Checksum
+
+Write-Host
+
 if ( -not ( Test-Path $toolsPath ) )
 {
     md $toolsPath | Out-Null
@@ -100,7 +110,7 @@ $content = ''
 $content = cat "$absPath\chocolateyUninstall.ps1.template" | % { $_ -replace "<<<ProductCodex86>>>", $productCodex86 } | % { $_ -replace "<<<ProductCodex64>>>", $productCodex64 }
 [IO.File]::WriteAllLines( "$absPath\tools\chocolateyUninstall.ps1", $content )
 
-$content = cat "$absPath\chocolateyInstall.ps1.template" | % { $_ -replace "<<<X86DownloadLink>>>", "$downloadUri$x86filename" } | % { $_ -replace "<<<X64DownloadLink>>>", "$downloadUri$x64filename" }
+$content = cat "$absPath\chocolateyInstall.ps1.template" | % { $_ -replace "<<<X86DownloadLink>>>", "$downloadUri$x86filename" } | % { $_ -replace "<<<X64DownloadLink>>>", "$downloadUri$x64filename" } | % { $_ -replace "<<<Sha256ChecksumX86>>>", $x86Checksum } | % { $_ -replace "<<<Sha256ChecksumX64>>>", $x64Checksum }
 [IO.File]::WriteAllLines( "$absPath\tools\chocolateyInstall.ps1", $content )
 
 $content = cat "$absPath\Far.nuspec.template" | % { $_ -replace "<<<Build>>>", $buildx86 }
