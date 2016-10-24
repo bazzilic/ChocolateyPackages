@@ -1,0 +1,8 @@
+Install-ChocolateyZipPackage `
+    -PackageName 'micro' `
+    -UnzipLocation "$(Split-Path -parent $MyInvocation.MyCommand.Definition)" `
+    -Url "<<<X86DownloadLink>>>" `
+    -Url64bit "<<<X64DownloadLink>>>" `
+    -ChecksumType "sha256" `
+    -Checksum "<<<Sha256ChecksumX86>>>" `
+    -Checksum64 "<<<Sha256ChecksumX64>>>"

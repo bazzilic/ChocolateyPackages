@@ -1,0 +1,7 @@
+Uninstall-ChocolateyZipPackage `
+    -PackageName "micro" `
+    -ZipFileName "<<<ZipFileNamex86>>>"
+
+Uninstall-ChocolateyZipPackage `
+    -PackageName "micro" `
+    -ZipFileName "<<<ZipFileNamex64>>>"
