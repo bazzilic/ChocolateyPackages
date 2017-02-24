@@ -1,0 +1,7 @@
+Uninstall-ChocolateyZipPackage `
+    -PackageName "vim-console" `
+    -ZipFileName "<<<ZipFileRT>>>"
+
+Uninstall-ChocolateyZipPackage `
+    -PackageName "vim-console" `
+    -ZipFileName "<<<ZipFileEXE>>>"

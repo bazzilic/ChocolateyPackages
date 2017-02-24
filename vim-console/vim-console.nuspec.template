@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>vim-console</id>
+    <title>Vi iMproved (Vim) - console only</title>
+    <version><<<Version>>></version>
+    <authors>Bram Moolenaar</authors>
+    <owners>Vasily Sidorov</owners>
+    <packageSourceUrl>https://github.com/bazzilic/ChocolateyPackages/tree/master/vim-console</packageSourceUrl>
+    <summary>A highly configurable text editor built to enable efficient text editing</summary>
+    <description>
+Vim is a highly configurable text editor built to enable efficient text editing. It is an improved version of the vi editor distributed with most UNIX systems.
+
+Vim is often called a programmer's editor, and so useful for programming that many consider it an entire IDE. It's not just for programmers, though. Vim is perfect for all kinds of text editing, from composing email to editing configuration files.
+
+This package is a console-only low impact installation of Vim. The only impact on the system is done if you choose to register file associations with Vim. To do so, pass package parameter string with the comma-separated list of extensions you want to have associated with Vim. Example: `--params '.txt,.ps1,.php'`.
+    </description>
+    <projectUrl>http://www.vim.org/</projectUrl>
+    <bugTrackerUrl>https://github.com/vim/vim/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/vim/vim</projectSourceUrl>
+    <mailingListUrl>http://www.vim.org/maillist.php</mailingListUrl>
+    <tags>text editor console vi vim</tags>
+    <licenseUrl>http://vimdoc.sourceforge.net/htmldoc/uganda.html#license</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/ferventcoder/chocolatey-packages/02c21bebe5abb495a56747cbb9b4b5415c933fc0/icons/vim.svg</iconUrl>
+  </metadata>
+  <files>
+    <file src="tools\*" target="tools" />
+  </files>
+</package>

@@ -1,0 +1,44 @@
+$packageParameters = $env:chocolateyPackageParameters
+
+$location = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+
+Install-ChocolateyZipPackage `
+    -PackageName 'vim-console' `
+    -UnzipLocation $location `
+    -Url "<<<DLrt>>>" `
+    -ChecksumType "sha256" `
+    -Checksum "<<<rtChecksum>>>" #`
+#    -SpecificFolder "vim/vim<<<Version>>>/" `
+
+Install-ChocolateyZipPackage `
+    -PackageName 'vim-console' `
+    -UnzipLocation $location `
+    -Url "<<<DLw32>>>" `
+    -ChecksumType "sha256" `
+    -Checksum "<<<w32Checksum>>>" #`
+#    -SpecificFolder "vim/vim<<<Version>>>/" `
+
+
+$files = get-childitem $location -include *.exe -recurse
+foreach ($file in $files)
+{
+    if (!($file.Name.Contains("vim.exe")))
+    {
+        #generate an ignore file
+        New-Item "$file.ignore" -type file -force | Out-Null
+    }
+}
+
+
+if ( $packageParameters )
+{
+    $extensions = $packageParameters.replace(' ','').split(',;')
+
+    foreach ( $ext in $extensions )
+    {
+        $realExt = if ( $ext[0] -eq '.' ) { $ext } else { ".$ext" }
+        Install-ChocolateyFileAssociation `
+            -Extension $realExt `
+            -Executable "$location\vim\vim<<<Version>>>\vim.exe"
+    }
+}
