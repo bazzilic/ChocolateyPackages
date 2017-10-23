@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>mysql-cli</id>
+    <version>5.7.19</version>
+    <title>MySQL Command Line Utility</title>
+    <authors>Oracle</authors>
+    <owners>Oracle</owners>
+    <licenseUrl>https://www.gnu.org/licenses/old-licenses/gpl-2.0.html</licenseUrl>
+    <projectUrl>https://dev.mysql.com/downloads/mysql/</projectUrl>
+    <iconUrl>https://labs.mysql.com/common/logos/mysql-logo.svg?v2</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>`mysql` is a simple SQL shell with input line editing capabilities. It supports interactive and noninteractive use. When used interactively, query results are presented in an ASCII-table format. When used noninteractively (for example, as a filter), the result is presented in tab-separated format. The output format can be changed using command options.
+    </description>
+    <summary>mysql is a simple command line MySQL client.
+    </summary>
+    <releaseNotes>https://github.com/RickStrahl/MarkdownMonster/blob/master/Changelog.md</releaseNotes>
+    <copyright>Oracle, 2000-2017</copyright>
+    <tags>mysql command line client cli</tags>
+    <bugTrackerUrl>https://bugs.mysql.com/</bugTrackerUrl>
+    <docsUrl>https://dev.mysql.com/doc/refman/5.7/en/mysql.html</docsUrl>
+    <mailingListUrl>https://forums.mysql.com/list.php?144</mailingListUrl>
+    <packageSourceUrl>https://github.com/bazzilic/ChocolateyPackages</packageSourceUrl>    
+  </metadata>
+    <files>
+        <file src="tools\**" target="tools" />
+    </files>
+</package>
