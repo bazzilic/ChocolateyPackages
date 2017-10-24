@@ -14,7 +14,6 @@
     </description>
     <summary>mysql is a simple command line MySQL client.
     </summary>
-    <releaseNotes>https://github.com/RickStrahl/MarkdownMonster/blob/master/Changelog.md</releaseNotes>
     <copyright>Oracle, 2000-2017</copyright>
     <tags>mysql command line client cli</tags>
     <bugTrackerUrl>https://bugs.mysql.com/</bugTrackerUrl>
