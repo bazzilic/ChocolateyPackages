@@ -5,7 +5,7 @@
     <version>5.7.19</version>
     <title>MySQL Command Line Utility</title>
     <authors>Oracle</authors>
-    <owners>Oracle</owners>
+    <owners>bazzilic</owners>
     <licenseUrl>https://www.gnu.org/licenses/old-licenses/gpl-2.0.html</licenseUrl>
     <projectUrl>https://dev.mysql.com/downloads/mysql/</projectUrl>
     <iconUrl>https://labs.mysql.com/common/logos/mysql-logo.svg?v2</iconUrl>
