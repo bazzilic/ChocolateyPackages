@@ -9,7 +9,7 @@ if ( -not ( Test-Path "$absPath\lastbuild.txt" ) )
 }
 
 $lastbuild   = (Get-Content "$absPath\lastbuild.txt" -First 1).Trim()
-$downloadUri = "http://farmanager.com/files/"
+$downloadUri = "https://farmanager.com/files/"
 
 $productCodex86 = ''
 $productCodex64 = ''
@@ -28,7 +28,7 @@ Write-Host "`t[ Far Manager choco package update script ]"
 Write-Host
 Write-Host "Last known build is" $lastbuild
 
-$webpage = ( Invoke-WebRequest -URI "http://farmanager.com/download.php?l=en" ).content
+$webpage = [string]::Concat( $( & curl -s "https://farmanager.com/download.php?l=en" ) )
 
 # X86
 if ( $webpage -match 'href="files/(Far30b\d+\.x86\.\d{8}\.msi)"' )
@@ -42,7 +42,7 @@ if ( $webpage -match 'href="files/(Far30b\d+\.x86\.\d{8}\.msi)"' )
     if ( [convert]::ToInt32($buildx86) -gt [convert]::ToInt32($lastbuild) )
     {
         $tempfilename = [System.IO.Path]::GetTempFileName()
-        Invoke-WebRequest -URI $downloadUri$x86filename -OutFile $tempfilename
+        & curl $downloadUri$x86filename -o $tempfilename
         $productCodex86 = & "$absPath\msi-get.exe" $tempfilename
         $x86Checksum = & checksum -t=sha256 $tempfilename
     }
@@ -74,7 +74,7 @@ if ( $webpage -match 'href="files/(Far30b\d+\.x64\.\d{8}\.msi)"' )
     if ( [convert]::ToInt32($buildx64) -gt [convert]::ToInt32($lastbuild) )
     {
         $tempfilename = [System.IO.Path]::GetTempFileName()
-        Invoke-WebRequest -URI $downloadUri$x64filename -OutFile $tempfilename
+        curl $downloadUri$x64filename -o $tempfilename
         $productCodex64 = & "$absPath\msi-get.exe" $tempfilename
         $x64Checksum = & checksum -t=sha256 $tempfilename
     }
