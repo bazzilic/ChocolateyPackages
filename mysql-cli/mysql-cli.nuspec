@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>mysql-cli</id>
-    <version>5.7.19</version>
+    <version>5.7.21</version>
     <title>MySQL Command Line Utility</title>
     <authors>Oracle</authors>
     <owners>bazzilic</owners>
@@ -14,7 +14,7 @@
     </description>
     <summary>mysql is a simple command line MySQL client.
     </summary>
-    <copyright>Oracle, 2000-2017</copyright>
+    <copyright>Oracle, 2000-2018</copyright>
     <tags>mysql command line client cli</tags>
     <bugTrackerUrl>https://bugs.mysql.com/</bugTrackerUrl>
     <docsUrl>https://dev.mysql.com/doc/refman/5.7/en/mysql.html</docsUrl>
