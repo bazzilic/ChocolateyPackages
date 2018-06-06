@@ -14,3 +14,5 @@ if ([Environment]::Is64BitOperatingSystem) {
 
 $msiId = '<<<ProductCodex86>>>'
 Uninstall-ChocolateyPackage 'Far' 'MSI' "$msiId /qb" -validExitCodes @(0)
+
+Remove-BinFile -Name 'Far'

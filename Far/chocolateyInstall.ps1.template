@@ -5,3 +5,16 @@ Install-ChocolateyPackage `
     -ChecksumType "sha256" `
     -Checksum "<<<Sha256ChecksumX86>>>" `
     -Checksum64 "<<<Sha256ChecksumX64>>>"
+
+if ((Get-ProcessorBits 64) -and (${env:ChocolateyForceX86} -ne 'true'))
+{
+  Install-BinFile -Name 'Far' -Path "${env:ProgramFiles}/Far Manager/Far.exe"
+}
+elseif ((Get-ProcessorBits 64) -and (${env:ChocolateyForceX86} -eq 'true'))
+{
+  Install-BinFile -Name 'Far' -Path "${env:ProgramFiles(x86)}/Far Manager/Far.exe"
+}
+elseif (Get-ProcessorBits 32)
+{
+  Install-BinFile -Name 'Far' -Path "${env:ProgramFiles}/Far Manager/Far.exe"
+}

@@ -19,17 +19,17 @@ Write-Host
 
 $webpage = ( Invoke-WebRequest -URI "http://www.vim.org/download.php" ).content
 
-$webpage -match 'vim(\d+)-(\d+)rt.zip' | Out-Null
+$webpage -match 'vim(\d+)rt.zip' | Out-Null
 $version = $Matches[1]
-$build   = $Matches[2]
-$versionPrint = $version.Insert(1,'.') + '.' + $build
+#$build   = $Matches[2]
+$versionPrint = $version.Insert(1,'.')# + '.' + $build
 
-$DLrt  = $downloadUri + $version + '-' + $build + 'rt.zip'
-$DLexe = $downloadUri + $version + '-' + $build + 'w32.zip'
+$DLrt  = $downloadUri + $version <# + '-' + $build #> + 'rt.zip'
+$DLexe = $downloadUri + $version <# + '-' + $build #> + 'w32.zip'
 
 if ( $webpage -match "href=`"$DLrt`"" )
 {
-    Write-Host "Found a link to runtime files $version-$build"
+    Write-Host "Found a link to runtime files v$versionPrint"
 
     $tempfilename = [System.IO.Path]::GetTempFileName()
     Invoke-WebRequest -URI $DLrt -OutFile $tempfilename
@@ -39,7 +39,7 @@ if ( $webpage -match "href=`"$DLrt`"" )
 
 if ( $webpage -match "href=`"$DLexe`"" )
 {
-    Write-Host "Found a link to console executable $version-$build"
+    Write-Host "Found a link to console executable v$versionPrint"
 
     $tempfilename = [System.IO.Path]::GetTempFileName()
     Invoke-WebRequest -URI $DLexe -OutFile $tempfilename
