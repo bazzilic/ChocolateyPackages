@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>mysql-cli</id>
-    <version>5.7.21</version>
+    <version>8.0.11</version>
     <title>MySQL Command Line Utility</title>
     <authors>Oracle</authors>
     <owners>bazzilic</owners>
@@ -19,7 +19,10 @@
     <bugTrackerUrl>https://bugs.mysql.com/</bugTrackerUrl>
     <docsUrl>https://dev.mysql.com/doc/refman/5.7/en/mysql.html</docsUrl>
     <mailingListUrl>https://forums.mysql.com/list.php?144</mailingListUrl>
-    <packageSourceUrl>https://github.com/bazzilic/ChocolateyPackages</packageSourceUrl>    
+    <packageSourceUrl>https://github.com/bazzilic/ChocolateyPackages</packageSourceUrl>
+    <dependencies>
+      <dependency id="vcredist2015" version="14.0.24215.20170201" />
+    </dependencies>
   </metadata>
     <files>
         <file src="tools\**" target="tools" />

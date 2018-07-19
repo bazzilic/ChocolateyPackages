@@ -68,7 +68,7 @@ $content = cat "$absPath\chocolateyInstall.ps1.template"   | `
 [IO.File]::WriteAllLines( "$absPath\tools\chocolateyInstall.ps1", $content )
 
 $content = cat "$absPath\chocolateyUninstall.ps1.template" |`
-    % { $_ -replace "<<<ZipFileRT>", $ZipFileRT }          | `
+    % { $_ -replace "<<<ZipFileRT>>>", $ZipFileRT }          | `
     % { $_ -replace "<<<ZipFileEXE>>>", $ZipFileEXE }
 [IO.File]::WriteAllLines( "$absPath\tools\chocolateyUninstall.ps1", $content )
 
