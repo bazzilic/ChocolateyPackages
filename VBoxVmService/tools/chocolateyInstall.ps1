@@ -1,5 +1,5 @@
 ﻿$packageName= 'VBoxVmService'
-$url        = 'https://sourceforge.net/projects/vboxvmservice/files/vboxvmservice/Versions%205.x/VBoxVmService-5.2-Jujube.exe/download'
+$url        = 'https://github.com/onlyfang/VBoxVmService/releases/download/6.0-Pumpkin/VBoxVmService-6.0-Pumpkin.exe'
 
 $packageArgs = @{
   packageName   = $packageName
@@ -8,7 +8,7 @@ $packageArgs = @{
   silentArgs    = "/VERYSILENT /NORESTART /NOCANCEL /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /SUPPRESSMSGBOXES"
   validExitCodes= @(0)
   softwareName  = 'VBoxVmService'
-  checksum      = '3F19B7CEF57005194CBA6445FFCC0ED7E6A8B2E51DA547CA161598DB9858B22C'
+  checksum      = '24CC6DCF0C5F8C25FCA5181952E86C5525D83F981CAECE6C5DE1F3E1EC673546'
   checksumType  = 'sha256'
 }
 
