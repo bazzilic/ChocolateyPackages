@@ -3,17 +3,17 @@
   <metadata>
     <id>VBoxVmService</id>
     <title>VBoxVmService</title>
-    <version>5.2</version>
+    <version>6.0</version>
     <authors>Mathias Herrmann, Zhe Fang, Runar Buvik</authors>
     <packageSourceUrl>https://github.com/bazzilic/ChocolateyPackages/tree/master/VBoxVmService</packageSourceUrl>
     <summary>VBoxVmService is a Windows application that allows you to run Oracle's VirtualBox VMs from within a native Windows service entity.</summary>
     <description>The open source virtualization software VirtualBox is lacking an option to run virtual machines as a Windows NT/XP/2003/W7/W8x service entity. VBoxVmService does the trick!</description>
-    <projectUrl>http://vboxvmservice.sourceforge.net/</projectUrl>
-    <bugTrackerUrl>https://sourceforge.net/p/vboxvmservice/_list/tickets</bugTrackerUrl>
-    <projectSourceUrl>https://sourceforge.net/p/vboxvmservice/code/ci/master/tree/</projectSourceUrl>
+    <projectUrl>https://github.com/onlyfang/VBoxVmService</projectUrl>
+    <bugTrackerUrl>https://github.com/onlyfang/VBoxVmService/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/onlyfang/VBoxVmService</projectSourceUrl>
     <mailingListUrl>https://sourceforge.net/p/vboxvmservice/mailman/</mailingListUrl>
     <tags>oracle VBoxVmService virtualbox virtualization vm service</tags>
-    <licenseUrl>https://sourceforge.net/projects/vboxvmservice/</licenseUrl>
+    <licenseUrl>https://github.com/onlyfang/VBoxVmService/blob/master/doc/Licence.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
   </metadata>
   <files>
