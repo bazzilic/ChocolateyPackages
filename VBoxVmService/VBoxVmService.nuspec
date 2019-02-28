@@ -5,6 +5,7 @@
     <title>VBoxVmService</title>
     <version>6.0</version>
     <authors>Mathias Herrmann, Zhe Fang, Runar Buvik</authors>
+    <owners>Vasily Sidorov (bazzilic), ryanzyy, dtgm</owners>
     <packageSourceUrl>https://github.com/bazzilic/ChocolateyPackages/tree/master/VBoxVmService</packageSourceUrl>
     <summary>VBoxVmService is a Windows application that allows you to run Oracle's VirtualBox VMs from within a native Windows service entity.</summary>
     <description>The open source virtualization software VirtualBox is lacking an option to run virtual machines as a Windows NT/XP/2003/W7/W8x service entity. VBoxVmService does the trick!</description>
