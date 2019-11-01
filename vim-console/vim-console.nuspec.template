@@ -13,7 +13,7 @@ Vim is a highly configurable text editor built to enable efficient text editing.
 
 Vim is often called a programmer's editor, and so useful for programming that many consider it an entire IDE. It's not just for programmers, though. Vim is perfect for all kinds of text editing, from composing email to editing configuration files.
 
-This package is a console-only low impact installation of Vim. The only impact on the system is done if you choose to register file associations with Vim. To do so, pass package parameter string with the comma-separated list of extensions you want to have associated with Vim. Example: `--params '.txt,.ps1,.php'`.
+This package is a console-only low impact installation of Vim.
     </description>
     <projectUrl>http://www.vim.org/</projectUrl>
     <bugTrackerUrl>https://github.com/vim/vim/issues</bugTrackerUrl>

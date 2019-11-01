@@ -28,17 +28,3 @@ foreach ($file in $files)
         New-Item "$file.ignore" -type file -force | Out-Null
     }
 }
-
-
-if ( $packageParameters )
-{
-    $extensions = $packageParameters.replace(' ','').split(',;')
-
-    foreach ( $ext in $extensions )
-    {
-        $realExt = if ( $ext[0] -eq '.' ) { $ext } else { ".$ext" }
-        Install-ChocolateyFileAssociation `
-            -Extension $realExt `
-            -Executable "$location\vim\vim<<<Version>>>\vim.exe"
-    }
-}

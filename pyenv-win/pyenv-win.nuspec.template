@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>pyenv-win</id>
+    <title>pyenv-win</title>
+    <version><<<version>>></version>
+    <authors>Kiran Kumar Kotari</authors>
+    <owners>Vasily Sidorov</owners>
+    <packageSourceUrl>https://github.com/bazzilic/ChocolateyPackages/tree/master/pyenv-win</packageSourceUrl>
+    <summary>pyenv for Windows</summary>
+    <description>`pyenv` is a simple python version management tool. It lets you easily switch between multiple versions of Python. It's simple, unobtrusive, and follows the UNIX tradition of single-purpose tools that do one thing well.</description>
+    <projectUrl>https://github.com/pyenv-win/pyenv-win</projectUrl>
+    <bugTrackerUrl>https://github.com/pyenv-win/pyenv-win/issues</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/pyenv-win/pyenv-win</projectSourceUrl>
+    <tags>python virtual environment pyenv</tags>
+    <licenseUrl>https://github.com/pyenv-win/pyenv-win/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+  </metadata>
+  <files>
+    <file src="tools\*" target="tools" />
+  </files>
+</package>
