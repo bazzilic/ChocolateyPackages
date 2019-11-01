@@ -2,7 +2,7 @@ $absPath = Split-Path -parent $PSCommandPath
 $toolsPath = "$absPath\tools\"
 $outputPath = "$(Split-Path -parent $absPath)\_output\"
 
-$downloadUri = "ftp://ftp.vim.org/pub/vim/pc/vim"
+$downloadUri = "http://ftp.vim.org/pub/vim/pc/vim"
 
 $version = ''
 $build   = ''
