@@ -3,3 +3,5 @@ _output/*
 *.nuspec
 chocolateyInstall.ps1
 chocolateyUninstall.ps1
+pyenv-win/pyenv-win/
+pyenv-win/tools/pyenv-win.zip
