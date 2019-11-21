@@ -16,10 +16,10 @@ if ( -not ( Test-Path $folder ) )
 
 Push-Location $folder
 git pull
-$version = $(cat '.\.version')
+$version = $(Get-Content '.\.version').Trim()
 Pop-Location
 
-$lastbuild = (Get-Content "$absPath\lastbuild.txt" -First 1).Trim()
+$lastbuild = (Get-Content "$absPath\lastbuild.txt").Trim()
 
 if ($version -eq $lastbuild)
 {
