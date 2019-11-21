@@ -16,19 +16,18 @@ if ( -not ( Test-Path $folder ) )
 
 Push-Location $folder
 git pull
-$commit = git rev-parse --short HEAD
-$version = "0.0." + $( git rev-list --count HEAD )
+$version = $(cat '.\.version')
 Pop-Location
 
-$lastbuild   = (Get-Content "$absPath\lastbuild.txt" -First 1).Trim()
+$lastbuild = (Get-Content "$absPath\lastbuild.txt" -First 1).Trim()
 
-if ($commit -eq $lastbuild)
+if ($version -eq $lastbuild)
 {
     "No new version, exiting!"
     exit
 }
 
-[IO.File]::WriteAllLines( "$absPath\lastbuild.txt", $commit )
+cp "$folder\.version" "$abspath\lastbuild.txt"
 
 $archive = "$abspath/tools/pyenv-win.zip"
 Compress-Archive -Path "$folder/*" -DestinationPath $archive -CompressionLevel Optimal -Force
