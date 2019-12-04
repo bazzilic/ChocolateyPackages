@@ -1,4 +1,6 @@
 To obtain the files for this Chocolatey package do the following:
 
 1. Install git
-2. Run: git clone https://github.com/pyenv-win/pyenv-win.git
+2. Run:   git clone https://github.com/pyenv-win/pyenv-win.git
+3. In PowerShell run:   Compress-Archive -Path "pyenv-win/*" -DestinationPath "./pyenv-win.zip" -CompressionLevel Optimal -Force
+4. File "pyenv-win.zip" should be identical to the one in the package
