@@ -3,7 +3,7 @@
   <metadata>
     <id>VBoxVmService</id>
     <title>VBoxVmService</title>
-    <version>6.0</version>
+    <version>6.1</version>
     <authors>Mathias Herrmann, Zhe Fang, Runar Buvik</authors>
     <owners>Vasily Sidorov (bazzilic), ryanzyy, dtgm</owners>
     <packageSourceUrl>https://github.com/bazzilic/ChocolateyPackages/tree/master/VBoxVmService</packageSourceUrl>
