@@ -1,5 +1,5 @@
 ﻿$packageName= 'VBoxVmService'
-$url        = 'https://github.com/onlyfang/VBoxVmService/releases/download/6.0-Pumpkin/VBoxVmService-6.0-Pumpkin.exe'
+$url        = 'https://github.com/onlyfang/VBoxVmService/releases/download/6.1-Kiwi/VBoxVmService-6.1-Kiwi.exe'
 
 $packageArgs = @{
   packageName   = $packageName
@@ -8,7 +8,7 @@ $packageArgs = @{
   silentArgs    = "/VERYSILENT /NORESTART /NOCANCEL /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /SUPPRESSMSGBOXES"
   validExitCodes= @(0)
   softwareName  = 'VBoxVmService'
-  checksum      = '24CC6DCF0C5F8C25FCA5181952E86C5525D83F981CAECE6C5DE1F3E1EC673546'
+  checksum      = 'EF181054002A4F11B07FE640F0DA572534C5D2B6C91896F4F688965B4BB0C0D9'
   checksumType  = 'sha256'
 }
 
