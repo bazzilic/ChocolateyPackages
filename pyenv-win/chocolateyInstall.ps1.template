@@ -5,9 +5,13 @@ Install-ChocolateyZipPackage `
     -ChecksumType "sha256" `
     -Checksum "<<<Sha256Checksum>>>"
 
-Install-ChocolateyPath `
-    -PathToInstall "$env:USERPROFILE\.pyenv\pyenv-win\bin"
+Install-ChocolateyEnvironmentVariable `
+    -VariableName 'PYENV' `
+    -VariableValue '%USERPROFILE%/.pyenv/pyenv-win/' `
+    -VariableType 'User'
 
 Install-ChocolateyPath `
-    -PathToInstall "$env:USERPROFILE\.pyenv\pyenv-win\shims"
-    
+    -PathToInstall '%PYENV%/bin'
+
+Install-ChocolateyPath `
+    -PathToInstall '%PYENV%/shims'

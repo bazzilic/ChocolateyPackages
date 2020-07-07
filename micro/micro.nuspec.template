@@ -16,7 +16,7 @@
     <tags>text editor console nano micro</tags>
     <licenseUrl>https://github.com/zyedidia/micro/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/zyedidia/micro/master/assets/logo.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/zyedidia/micro/master/assets/micro-logo.svg</iconUrl>
   </metadata>
   <files>
     <file src="tools\*" target="tools" />

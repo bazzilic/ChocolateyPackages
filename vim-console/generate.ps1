@@ -2,7 +2,7 @@ $absPath = Split-Path -parent $PSCommandPath
 $toolsPath = "$absPath\tools\"
 $outputPath = "$(Split-Path -parent $absPath)\_output\"
 
-$downloadUri = "http://ftp.vim.org/pub/vim/pc/vim"
+$downloadUri = "https://ftp.nluug.nl/pub/vim/pc/vim"
 
 $version = ''
 $build   = ''
@@ -17,7 +17,7 @@ Write-Host
 Write-Host "`t[ vim-console choco package update script ]"
 Write-Host
 
-$webpage = ( Invoke-WebRequest -URI "http://www.vim.org/download.php" ).content
+$webpage = ( Invoke-WebRequest -URI "https://www.vim.org/download.php" ).content
 
 $webpage -match 'vim(\d+)rt.zip' | Out-Null
 $version = $Matches[1]

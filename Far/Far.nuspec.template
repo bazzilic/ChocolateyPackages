@@ -10,13 +10,13 @@
     <summary>File and ARchive Manager</summary>
     <description>Far Manager is a program for managing files and archives in Windows operating systems. Far Manager works in text mode and provides a simple and intuitive interface for performing most of the necessary actions.</description>
     <projectUrl>http://farmanager.com/index.php?l=en</projectUrl>
-    <bugTrackerUrl>http://bugs.farmanager.com/my_view_page.php</bugTrackerUrl>
-    <projectSourceUrl>https://sourceforge.net/p/farmanager/code/HEAD/tree/</projectSourceUrl>
-    <mailingListUrl>http://forum.farmanager.com/viewforum.php?f=26</mailingListUrl>
+    <bugTrackerUrl>https://bugs.farmanager.com/</bugTrackerUrl>
+    <projectSourceUrl>https://github.com/FarGroup/FarManager</projectSourceUrl>
+    <mailingListUrl>https://groups.google.com/group/fardeven</mailingListUrl>
     <tags>admin console archiver file manager ftp scp sftp</tags>
     <licenseUrl>http://farmanager.com/license.php?l=en</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://cdn.rawgit.com/bazzilic/ChocolateyPackages/ee927cea3134c75c9a58acde54a28a644a9e2040/Far/icon/Far.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/FarGroup/FarManager/master/far/Far.ico</iconUrl>
   </metadata>
   <files>
     <file src="tools\*" target="tools" />
