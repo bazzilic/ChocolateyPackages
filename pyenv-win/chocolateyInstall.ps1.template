@@ -7,11 +7,11 @@ Install-ChocolateyZipPackage `
 
 Install-ChocolateyEnvironmentVariable `
     -VariableName 'PYENV' `
-    -VariableValue '%USERPROFILE%/.pyenv/pyenv-win/' `
+    -VariableValue '%USERPROFILE%\.pyenv\pyenv-win\' `
     -VariableType 'User'
 
 Install-ChocolateyPath `
-    -PathToInstall '%PYENV%/bin'
+    -PathToInstall '%USERPROFILE%\.pyenv\pyenv-win\bin'
 
 Install-ChocolateyPath `
-    -PathToInstall '%PYENV%/shims'
+    -PathToInstall '%USERPROFILE%\.pyenv\pyenv-win\shims'
