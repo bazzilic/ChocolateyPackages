@@ -16,11 +16,14 @@ Write-Host
 Write-Host "`t[ micro choco package update script ]"
 Write-Host
 
-[Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls" # default in powershell is TLS 1.0, unsupported by github
+[Net.ServicePointManager]::SecurityProtocol = "tls13, tls12" # default in powershell is TLS 1.0, unsupported by github
 $webpage = ( Invoke-WebRequest -URI "https://github.com/zyedidia/micro/releases/latest" ).content
 
-$webpage -match 'v(\d+\.\d+\.\d+)' | Out-Null
+$webpage -match 'micro-(\d+\.\d+\.\d+)-win64.zip' | Out-Null
 $version = $Matches[1]
+
+Write-Host -NoNewline "Found version: "
+Write-Host -ForegroundColor Green $version
 
 $x86DownloadLink = '/zyedidia/micro/releases/download/v' + $version + '/micro-' + $version + '-win32.zip'
 $x64DownloadLink = '/zyedidia/micro/releases/download/v' + $version + '/micro-' + $version + '-win64.zip'
