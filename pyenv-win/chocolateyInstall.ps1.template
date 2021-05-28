@@ -8,7 +8,7 @@ Install-ChocolateyZipPackage `
 Install-ChocolateyEnvironmentVariable `
     -VariableName 'PYENV' `
     -VariableValue '%USERPROFILE%\.pyenv\pyenv-win\' `
-    -VariableType 'User'
+    -VariableType 'Machine'
 
 Install-ChocolateyPath `
     -PathToInstall '%USERPROFILE%\.pyenv\pyenv-win\bin'
