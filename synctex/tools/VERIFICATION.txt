@@ -2,6 +2,6 @@
 Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
-There are two files in this package: synctex.exe and kpathsea***.dll (*** for version number).
-Files are downloaded from the official TeX Live SVN server, from this folder: https://www.tug.org/svn/texlive/trunk/Master/bin/win32/
-To verify, download latest revisions of synctex.exe and kpathsea***.dll and ensure they match the files in the package.
+There is one binary file in this package: synctex.exe
+The file is downloaded from the official TeX Live SVN server, from this folder: https://www.tug.org/svn/texlive/trunk/Master/bin/win32/
+To verify, download the latest revision of synctex.exe and ensure it matches the file in the package.

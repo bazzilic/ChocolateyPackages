@@ -21,7 +21,7 @@ try {
   $lib_binary_file     = 'kpathsea___.dll'
 
   #-------------------------- FUNCTIONS -------------------------------------------------
-  function GetLatestKnowRevision {
+  function GetLatestKnownRevision {
     param( [string]$filename )
 
     if ( -not ( Test-Path "$absPath\$filename" ) )
@@ -66,22 +66,23 @@ try {
   }
   #---------------------------------------------------------------------------
 
-  $synctex_last_known_rev = GetLatestKnowRevision $synctex_rev_file
+  $synctex_last_known_rev = GetLatestKnownRevision $synctex_rev_file
   Write-Host "Last known '$synctex_binary_file' revision is $synctex_last_known_rev"
 
-  $lib_last_known_rev = GetLatestKnowRevision $lib_rev_file
-  Write-Host "Last known '$lib_binary_file' revision is $lib_last_known_rev"
+  $lib_last_known_rev = 0
+  # $lib_last_known_rev = GetLatestKnownRevision $lib_rev_file
+  # Write-Host "Last known '$lib_binary_file' revision is $lib_last_known_rev"
 
-  $webpage = GetWebPage $base_url
-  if ( $webpage -match $lib_binary_file_re ) {
-    $lib_binary_file = $Matches.libfname
-  } else {
-    "Library binary file not found in the repo!"
-    exit
-  }
+  # $webpage = GetWebPage $base_url
+  # if ( $webpage -match $lib_binary_file_re ) {
+  #   $lib_binary_file = $Matches.libfname
+  # } else {
+  #   "Library binary file not found in the repo!"
+  #   exit
+  # }
 
   $synctex_lastrev = GetLatestRevisionNumber $synctex_binary_file
-  $lib_lastrev = GetLatestRevisionNumber $lib_binary_file
+  $lib_lastrev = 0 # GetLatestRevisionNumber $lib_binary_file
 
   if ( ( $synctex_lastrev -gt $synctex_last_known_rev ) -or ( $lib_lastrev -gt $lib_last_known_rev ) ) {
     "Found '$synctex_binary_file' revision $synctex_lastrev"
@@ -94,7 +95,7 @@ try {
   }
 
   DownloadFile $synctex_binary_file $synctex_lastrev
-  DownloadFile $lib_binary_file $lib_lastrev
+  # DownloadFile $lib_binary_file $lib_lastrev
 
   $content = cat "$absPath\$package_name.nuspec.template" | % { $_ -replace "{{VERSION}}", "${synctex_lastrev}.${lib_lastrev}" }
   touch "$absPath\$package_name.nuspec"
