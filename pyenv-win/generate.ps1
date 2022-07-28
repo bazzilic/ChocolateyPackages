@@ -1,5 +1,4 @@
 $absPath = Split-Path -parent $PSCommandPath
-$toolsPath = "$absPath\tools\"
 $outputPath = "$(Split-Path -parent $absPath)\_output\"
 
 if ( -not ( Test-Path "$absPath\lastbuild.txt" ) )
@@ -27,11 +26,11 @@ if ($version -eq $lastbuild)
     exit
 }
 
-cp "$folder\.version" "$abspath\lastbuild.txt"
+Copy-Item "$folder\.version" "$abspath\lastbuild.txt"
 
 $archive = "$abspath/tools/pyenv-win.zip"
 Compress-Archive -Path "$folder/*" -DestinationPath $archive -CompressionLevel Optimal -Force
-$checksum = & checksum -t=sha256 $archive
+$checksum = Get-FileHash -Path $archive -Algorithm sha256
 
 $content = Get-Content "$absPath\chocolateyInstall.ps1.template" | ForEach-Object { $_ -replace "<<<Sha256Checksum>>>", $checksum }
 [IO.File]::WriteAllLines( "$absPath\tools\chocolateyInstall.ps1", $content )
